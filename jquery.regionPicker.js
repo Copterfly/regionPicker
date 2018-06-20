@@ -1,6 +1,11 @@
 /*-----------------------------------------------
  $.fn.regionpicker() 地区选择插件
- by www.copterfly.cn 2017-12-12 星期二
+ by Copterfly 2018-06-18
+ ----------
+ github:
+ https://github.com/Copterfly/regionPicker
+ demo & docs:
+ http://www.copterfly.cn/demos/js/jquery.regionPicker/
  ------------------------------------------------
  插件提示额外两个方法：
  $('#xxx').regionPicker('reset'); // 重置 (把input的值设为空，把弹出的值也设为空，把所有select设为未选择，相当于用空值初始化插件)
