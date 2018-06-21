@@ -388,6 +388,24 @@
                     <td class="col-type">all</td>
                 </tr>
                 <tr>
+                    <td class="col-item">onAjaxStart</td>
+                    <td class="col-default">function ($element) { }</td>
+                    <td class="col-desc">
+                        回调: 获取异步数据发起请求前，即 ajax.beforeSend，主要用于取数据等待时禁用一些按钮等。
+                        <br />回调参数只有一个：$element
+                    </td>
+                    <td class="col-type">all</td>
+                </tr>
+                <tr>
+                    <td class="col-item">onAjaxComplete</td>
+                    <td class="col-default">function ($element) { }</td>
+                    <td class="col-desc">
+                        回调: 获取异步数据完成后，即 ajax.complete，主要用于取数据完成后启用一些按钮等。
+                        <br />回调参数只有一个：$element
+                    </td>
+                    <td class="col-type">all</td>
+                </tr>
+                <tr>
                     <td class="col-item">isMobileBrowser</td>
                     <td class="col-default">false</td>
                     <td class="col-desc">否为手机端模式</td>

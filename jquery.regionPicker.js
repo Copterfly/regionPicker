@@ -99,7 +99,9 @@
             window.console && console.log('onClose:', result);
         },
         onShow: function (result, $element) {}, // 回调: popup模式 显示时
-        onComplete: function ($element) {} // 回调: 插件渲染输出完成
+        onComplete: function ($element) {}, // 回调: 插件渲染输出完成
+        onAjaxStart: function ($element) {}, // 回调: 获取异步数据发起请求前，即 ajax.beforeSend
+        onAjaxComplete: function ($element) {}  // 回调: 获取异步数据完成后，即 ajax.complete
     };
     // 
     function RegionPicker(element, options) {
@@ -250,6 +252,7 @@
             beforeSend: function () {
                 _this.isLoadingData = true;
                 _this.$element.addClass(_classes.triggerLoading);
+                _this.options.onAjaxStart && _this.options.onAjaxStart(_this.$element);
             },
             success: function (result) {
                 _this.isLoadingData = false;
@@ -265,7 +268,8 @@
                     callback && callback(dataList);
                 }
             },
-            error: function () {
+            complete: function () {
+                _this.options.onAjaxComplete && _this.options.onAjaxComplete(_this.$element);
             }
         });
     };
